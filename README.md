@@ -1,6 +1,6 @@
 # Paxmod MCP Server
 
-Connect your AI agent to [Paxmod](https://www.paxmod.com), content moderation for games and online communities: player chat, profanity, harassment, grooming risk, PII and spam.
+Connect your AI agent to [Paxmod](https://www.paxmod.com), content moderation for any app where people post or chat: in-app chat, comments, forums, communities, marketplaces and games. It catches profanity, harassment, grooming risk, personal information and spam, plus anything else you describe in a plain-English policy.
 
 This is a hosted (remote) [Model Context Protocol](https://modelcontextprotocol.io) server. There is nothing to install:
 
@@ -10,7 +10,7 @@ https://www.paxmod.com/mcp
 
 ## What your agent can do
 
-- **Add moderation to your app.** "Add Paxmod moderation to our game chat." The agent reads the API guide, creates a test key with no signup, builds the integration and checks it with real messages, then gives you a link to keep the key.
+- **Add moderation to your app.** "Add Paxmod moderation to our app's chat." The agent reads the API guide, creates a test key with no signup, builds the integration and checks it with real messages, then gives you a link to keep the key.
 - **Tune your policy from examples.** "These 6 messages were flagged but are fine, and these 2 got through. Fix the policy." Advanced mode moderates against a policy you write in plain English. The agent rewrites it and tests each draft against your examples until every one comes back right. Tests store nothing and use no credits on your project (on a free test key, each message checked counts toward its 100).
 - **Check messages.** "Would this get flagged?" with a score per category.
 

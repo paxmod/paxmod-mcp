@@ -2,9 +2,9 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.paxmod/paxmod",
   "title": "Paxmod",
-  "description": "Game chat moderation: get a test key, check messages, and test a plain-English policy on examples.",
+  "description": "Content moderation for chat and comments: free test keys, message checks, plain-English policies.",
   "websiteUrl": "https://www.paxmod.com/docs/mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "url": "https://github.com/paxmod/paxmod-mcp",
     "source": "github"
