@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "paxmod": {
+      "type": "http",
+      "url": "https://www.paxmod.com/mcp"
+    }
+  }
+}
