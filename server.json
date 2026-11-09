@@ -4,7 +4,7 @@
   "title": "Paxmod",
   "description": "Content moderation for chat and comments: free test keys, message checks, plain-English policies.",
   "websiteUrl": "https://www.paxmod.com/docs/mcp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "repository": {
     "url": "https://github.com/paxmod/paxmod-mcp",
     "source": "github"
