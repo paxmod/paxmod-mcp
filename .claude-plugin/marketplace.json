@@ -1,0 +1,14 @@
+{
+  "name": "paxmod",
+  "owner": { "name": "Paxmod", "url": "https://www.paxmod.com" },
+  "metadata": { "description": "Paxmod plugins for Claude Code." },
+  "plugins": [
+    {
+      "name": "paxmod",
+      "source": "./",
+      "description": "Paxmod content moderation: the hosted MCP server plus a skill that sets up or reviews a Paxmod integration.",
+      "version": "1.2.0",
+      "homepage": "https://www.paxmod.com/docs/mcp"
+    }
+  ]
+}

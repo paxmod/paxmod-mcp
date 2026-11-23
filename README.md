@@ -13,7 +13,7 @@ https://www.paxmod.com/mcp
 - **Add moderation to your app.** "Add Paxmod moderation to our app's chat." The agent reads the API guide, creates a test key with no signup, builds the integration and checks it with real messages, then gives you a link to keep the key.
 - **Tune your policy from examples.** "These 6 messages were flagged but are fine, and these 2 got through. Fix the policy." Advanced mode moderates against a policy you write in plain English. The agent rewrites it and tests each draft against your examples until every one comes back right. Tests store nothing and use no credits on your project (on a free test key, each message checked counts toward its 100).
 - **Check messages.** "Would this get flagged?" with a score per category.
-- **Work on your own projects.** "What got flagged in our chat this week?" or "Show me this player's history." Sign in to Paxmod once and the agent can read your projects, settings, usage and flagged messages, and test policies on them, with no API key in the chat.
+- **Work on your own projects.** "What got flagged in our chat this week?" or "Ban this player, they sent the same scam link 40 times." Sign in to Paxmod once and the agent can read your projects, settings, usage and flagged messages, mark flags right or wrong, warn or ban players, and save policies and word rules, with no API key in the chat.
 
 ## Tools
 
@@ -30,15 +30,39 @@ https://www.paxmod.com/mcp
 | `test_policy_on_project` | The policy test on one of your projects, without pasting an API key | Sign-in |
 | `list_flagged_messages` | Recent flagged messages, by date, category or player | Sign-in |
 | `get_player_history` | One player's flagged messages and what they were flagged for | Sign-in |
+| `save_policy` | Saves an Advanced mode policy, returning the old one | Sign-in, editor |
+| `save_word_rules` | Replaces a project's word rules, returning the old ones | Sign-in, editor |
+| `review_flagged_messages` | Marks up to 100 flagged messages right (TP) or wrong (FP) | Sign-in, editor |
+| `set_player_action` | Warns or bans a player, with a reason | Sign-in, editor |
+| `clear_player_action` | Removes a warning or ban | Sign-in, editor |
 
-`get_integration_guide`, `test_policy`, `test_word_rules` and every Sign-in tool are read-only.
+`get_integration_guide`, `test_policy`, `test_word_rules` and the Sign-in read tools are read-only. The write tools need an owner, admin or editor role on the project, and each returns what it replaced so it can be undone.
+
+## Prompts
+
+`add_moderation` and `tune_policy` for everyone. Signed in: `triage_flags` (suggest TP or FP verdicts and save the ones you approve), `review_player` (recommend no action, a warning or a ban) and `moderation_report` (volume, flags, repeat offenders, review accuracy).
 
 ## Setup
 
 ### Claude Code
 
+As a plugin, with the MCP server and the `paxmod-integration` skill:
+
+```
+/plugin marketplace add paxmod/paxmod-mcp
+/plugin install paxmod@paxmod
+```
+
+Or the MCP server on its own:
+
 ```bash
 claude mcp add --transport http paxmod https://www.paxmod.com/mcp
+```
+
+The skill alone, for any agent that reads skills:
+
+```bash
+npx skills add paxmod/paxmod-mcp
 ```
 
 ### Claude and Claude Desktop
@@ -75,7 +99,7 @@ Add a remote MCP server with the URL `https://www.paxmod.com/mcp` and the Stream
 
 ## Sign-in and keys
 
-The public tools need no sign-in. The Sign-in tools use Sign in with Paxmod (OAuth 2.1): the first time your agent calls one, your MCP client opens a Paxmod page where you sign in and choose Allow. Connected apps can't change settings or see API keys, and organizations that keep data in a separate region don't share player messages with them unless Paxmod turns it on.
+The public tools need no sign-in. The Sign-in tools use Sign in with Paxmod (OAuth 2.1): the first time your agent calls one, your MCP client opens a Paxmod page where you sign in and choose Allow. Connected apps never see API keys. Only owners, admins and editors can use the write tools, and organizations that keep data in a separate region don't share player messages with them unless Paxmod turns it on.
 
 Tools marked API key take one from your project's Settings in the [Paxmod console](https://www.paxmod.com/console), or a test key from `create_test_api_key`.
 

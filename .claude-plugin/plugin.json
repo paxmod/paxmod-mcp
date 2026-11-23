@@ -1,0 +1,19 @@
+{
+  "name": "paxmod",
+  "version": "1.2.0",
+  "description": "Paxmod content moderation for Claude Code: the hosted Paxmod MCP server plus a skill that sets up or reviews a Paxmod integration.",
+  "author": {
+    "name": "Paxmod",
+    "url": "https://www.paxmod.com"
+  },
+  "homepage": "https://www.paxmod.com/docs/mcp",
+  "repository": "https://github.com/paxmod/paxmod-mcp",
+  "keywords": [
+    "moderation",
+    "content-moderation",
+    "trust-and-safety",
+    "chat",
+    "mcp"
+  ],
+  "privacyPolicyUrl": "https://www.paxmod.com/privacy-policy"
+}
