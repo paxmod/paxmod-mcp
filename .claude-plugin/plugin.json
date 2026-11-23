@@ -15,5 +15,6 @@
     "chat",
     "mcp"
   ],
-  "privacyPolicyUrl": "https://www.paxmod.com/privacy-policy"
+  "privacyPolicyUrl": "https://www.paxmod.com/privacy-policy",
+  "license": "MIT"
 }
